@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: chatbot-assistant
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
